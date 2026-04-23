@@ -1,0 +1,13 @@
+{
+  "name": "Lumina Video AI",
+  "description": "A powerful, AI-driven video editor with text-based timeline editing, smart silence removal, and multi-format conversion.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "Video Editing",
+    "AI Transcription",
+    "Smart Cut Detection"
+  ]
+}
