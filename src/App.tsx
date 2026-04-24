@@ -466,8 +466,21 @@ export default function App() {
                     Est. {formatFileSize(getEstimatedSize())} ({exportFormat})
                   </div>
                   <div className="mt-4 flex gap-4">
-                    <button className="text-[10px] font-bold uppercase border-b border-brand-text mb-1">Aplicar Corte</button>
-                    <button className="text-[10px] font-bold uppercase opacity-30">Ignorar</button>
+                    <button 
+                      onClick={() => {
+                        setProfile(EditorProfile.REELS);
+                        setMessages(prev => [...prev, {
+                          id: Date.now().toString(),
+                          role: 'assistant',
+                          content: "Corte 9:16 aplicado para o formato Reels/TikTok. Deseja aplicar mais algum ajuste?",
+                          timestamp: Date.now()
+                        }]);
+                      }}
+                      className="text-[10px] font-bold uppercase border-b border-brand-text mb-1 hover:opacity-70 transition-opacity"
+                    >
+                      Aplicar Corte
+                    </button>
+                    <button className="text-[10px] font-bold uppercase opacity-30 hover:opacity-100 transition-opacity">Ignorar</button>
                   </div>
                 </motion.div>
               )}
